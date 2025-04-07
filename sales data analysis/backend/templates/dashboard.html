@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Data Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Sales Data Dashboard</h2>
+
+    <h3>Sales Chart</h3>
+    <img src="{{ url_for('static', filename='sales_chart.png') }}" alt="Sales Chart">
+
+    <h3>Sales Summary</h3>
+    {{ summary_table|safe }}
+
+    <h3>Raw Sales Data</h3>
+    {{ sales_data|safe }}
+
+    <a href="{{ url_for('home') }}"><button>Back to Home</button></a>
+</body>
+</html>
